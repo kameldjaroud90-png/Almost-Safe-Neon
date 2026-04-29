@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Almost Safe Neon</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Space+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <canvas id="star-canvas"></canvas>
+
+  <div id="asn-menu">
+    <h1>ALMOST SAFE</h1>
+    <p class="sub">Survive. Dodge. Outlast.</p>
+    <p class="best-score" id="best-display">BEST ∞ — 0</p>
+    <div class="mode-grid">
+      <button class="mode-btn easy" onclick="ASN.start('easy')">
+        <span class="mode-label">☀ EASY</span>
+        <span class="mode-desc">Events légers</span>
+      </button>
+      <button class="mode-btn medium" onclick="ASN.start('medium')">
+        <span class="mode-label">⚡ MEDIUM</span>
+        <span class="mode-desc">Events fréquents</span>
+      </button>
+      <button class="mode-btn hard" onclick="ASN.start('hard')">
+        <span class="mode-label">💀 HARD</span>
+        <span class="mode-desc">Events violents</span>
+      </button>
+      <button class="mode-btn infinite" onclick="ASN.start('infinite')">
+        <span class="mode-label">∞ INFINITE</span>
+        <span class="mode-desc">Events infinis</span>
+      </button>
+    </div>
+  </div>
+
+  <div id="asn-hud">
+    <div>
+      <div class="hud-score" id="hud-score">0</div>
+      <div class="hud-lives" id="hud-lives"></div>
+    </div>
+    <div class="hud-right">
+      <div class="hud-best" id="hud-best">BEST: 0</div>
+      <div class="hud-event" id="hud-event">EVENT</div>
+      <div class="hud-shield" id="hud-shield">🛡 SHIELD</div>
+    </div>
+  </div>
+
+  <canvas id="asn-canvas"></canvas>
+
+  <div id="event-banner">
+    <div class="ev-title" id="ev-title">EVENT</div>
+    <div class="ev-sub" id="ev-sub">description</div>
+  </div>
+
+  <div id="asn-over">
+    <h2>GAME OVER</h2>
+    <div class="over-score" id="over-score">0</div>
+    <div id="over-best-label" class="over-best">BEST: 0</div>
+    <div id="over-new-best" class="over-new-best">✦ NOUVEAU RECORD ✦</div>
+    <div class="over-stats">
+      <div class="stat-box"><div class="stat-val" id="stat-time">0s</div><div class="stat-lbl">TEMPS</div></div>
+      <div class="stat-box"><div class="stat-val" id="stat-apples">0</div><div class="stat-lbl">APPLES</div></div>
+      <div class="stat-box"><div class="stat-val" id="stat-events">0</div><div class="stat-lbl">EVENTS SURVÉCUS</div></div>
+      <div class="stat-box"><div class="stat-val" id="stat-avoided">0</div><div class="stat-lbl">ESQUIVÉS</div></div>
+    </div>
+    <div class="over-btns">
+      <button class="over-btn retry" id="retry-btn">REJOUER</button>
+      <button class="over-btn menu" onclick="ASN.showMenu()">MENU</button>
+    </div>
+  </div>
+
+  <div id="asn-toast"></div>
+
+  <script src="game.js"></script>
+</body>
+</html>
